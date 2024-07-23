@@ -26,9 +26,9 @@ pub(crate) fn impl_xml(input: TokenStream) -> TokenStream {
                     }
                 }
             }
-            _ => panic!("Getters can only be used with structs with named fields"),
+            _ => panic!("XML can only be used with structs with named fields"),
         },
-        _ => panic!("Setters can only be used with structs"),
+        _ => panic!("XML can only be used with structs"),
     };
 
     r#gen.into()
