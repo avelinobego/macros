@@ -2,17 +2,25 @@ use macros::XML;
 
 #[derive(XML)]
 struct Test {
-    nome: String,
-    idade: i32,
+    pub nome: String,
+    pub idade: i32,
+    pub emprego: Test2,
 }
 
-impl Test {
-    pub fn new(nome: String, idade: i32) -> Self {
-        Self { nome, idade }
-    }
+#[derive(XML)]
+struct Test2 {
+    cargo: String,
+    salario: f32,
 }
 
-fn main(){
-    let t = Test::new("Avelino".into(), 52);
+fn main() {
+    let t = Test {
+        nome: "Avelino".into(),
+        idade: 52,
+        emprego: Test2 {
+            cargo: "programador".into(),
+            salario: 10.00,
+        },
+    };
     println!("{}", t);
 }
