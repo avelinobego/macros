@@ -11,6 +11,7 @@ name = "testes"
 path = "tests/test.rs"
 
 [dependencies]
+proc-macro2 = "1.0.86"
 syn = { version = "2.0.71", features = ["full"] }
 quote = "1.0.36"
 trybuild = "1.0.97"
